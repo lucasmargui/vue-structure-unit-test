@@ -39,7 +39,9 @@ Para realização dos testes do componente iremos criar um diretório __tests__.
 </div>
 
 
-# Implementação dos testes
+# Implementação dos testes componente SearchInput
+
+
 
 ## Importações
 ```
