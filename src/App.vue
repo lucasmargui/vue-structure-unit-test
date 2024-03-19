@@ -1,24 +1,19 @@
 <template>
   <div id="app">
-    <div class="component-box">
-      <search-input />
-    </div>
+    <LoginComponent />
   </div>
 </template>
 
 <script>
-import SearchInput from './components/search-input/SearchInput.vue'
+
+import LoginComponent from './components/login/LoginComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    SearchInput
+    LoginComponent
   },
-  data() {
-    return {
-      search: ''
-    }
-  }
+  
 }
 </script>
 
