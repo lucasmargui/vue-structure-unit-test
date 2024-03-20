@@ -37,22 +37,14 @@ describe('LoginComponent', () => {
 
   it('displays error message for invalid credentials', async () => {
     const wrapper = mount(LoginComponent);
-    // const emailInput = wrapper.find('input[type="email"]');
-    // const passwordInput = wrapper.find('input[type="password"]');
-    // await emailInput.setValue('invalid@example.com');
-    // await passwordInput.setValue('invalidpassword');
-    // const form = wrapper.find('form');
-    // await form.trigger('submit');
- 
-   
+     //wrapper.setData({ email: 'invalid@example.com', password: 'invalidpassword' });
+     const emailInput = wrapper.find('input[type="email"]');
+     const passwordInput = wrapper.find('input[type="password"]');
+     await emailInput.setValue('invalid@example.com');
+     await passwordInput.setValue('invalidpassword');
 
-    // const errorMessage = wrapper.find('.error-message');
-  
-    // expect(errorMessage.text()).toBe('Invalid email or password.');
-
-    wrapper.setData({ email: 'invalid@example.com', password: 'invalidpassword' });
-    await wrapper.vm.login();
-    expect(wrapper.vm.errorMessage).toBe('Invalid email or password.');
+     await wrapper.vm.login();
+     expect(wrapper.vm.errorMessage).toBe('Invalid email or password.');
 
   });
 
