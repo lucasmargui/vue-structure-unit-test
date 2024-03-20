@@ -1,10 +1,10 @@
-import { mount } from '@vue/test-utils'
+import { mount , shallowMount } from '@vue/test-utils'
 import ButtonCounter from '../ManipulacaoEvento.vue'
 
 describe('ButtonCounter', () => {
     it('incrementa o contador ao clicar no botão', async () => {
       const wrapper = mount(ButtonCounter)
-      const button = wrapper.find('button')
+      const button = wrapper.find('.increment-button');
   
       // Verifica se o contador começa em 0
       expect(wrapper.vm.counter).toBe(0)
@@ -27,11 +27,16 @@ describe('ButtonCounter', () => {
   
     it('reseta o contador ao clicar no botão "Redefinir"', async () => {
       const wrapper = mount(ButtonCounter)
-      const resetButton = wrapper.findAll('button').at(1) // Encontra o segundo botão, que é o botão de reset
+
+      
+
+      //wrapper.findAll('button').at(1) // Encontra o segundo botão
+
+      const resetButton = wrapper.find('.reset-button');
   
       // Incrementa o contador
-      await wrapper.find('button').trigger('click')
-      await wrapper.find('button').trigger('click')
+      await wrapper.find('.increment-button').trigger('click')
+      await wrapper.find('.increment-button').trigger('click')
   
       // Verifica se o contador não está em 0
       expect(wrapper.vm.counter).toBeGreaterThan(0)
@@ -42,4 +47,21 @@ describe('ButtonCounter', () => {
       // Verifica se o contador foi resetado para 0
       expect(wrapper.vm.counter).toBe(0)
     })
+
+
+    it('changes text when button is clicked', async () => {
+
+        const wrapper = shallowMount(ButtonCounter); // Monta o componente
+        const button = wrapper.find('.change-button'); // Encontra o botão
+    
+        // Verifica se o texto inicial está correto
+        expect(wrapper.find('h1').text()).toBe('Initial Text');
+    
+        // Simula o clique no botão
+        await button.trigger('click');
+    
+        // Verifica se o texto mudou para "New Text" após o clique no botão
+        expect(wrapper.find('h1').text()).toBe('New Text');
+      });
+
   })
