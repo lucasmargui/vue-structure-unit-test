@@ -1,21 +1,26 @@
 import { mount } from '@vue/test-utils'
 import HelloWorld from '../RenderizaComponente.vue'
 
-describe('RenderizaComponente.vue', () => {
-  it('renderiza corretamente com a mensagem passada', () => {
-    const mensagem = 'Olá Mundo!'
-    const wrapper = mount(HelloWorld, {
-      propsData: {
-        msg: mensagem
-      }
+describe('HelloWorld.vue', () => {
+    it('renderiza corretamente com a mensagem passada e descrição', () => {
+      const mensagem = 'Olá Mundo!'
+      const descricao = 'Este é um exemplo de teste unitário em Vue'
+      const wrapper = mount(HelloWorld, {
+        propsData: {
+          msg: mensagem,
+          description: descricao
+        }
+      })
+  
+      expect(wrapper.text()).toContain(mensagem)
+      expect(wrapper.text()).toContain(descricao)
     })
 
-    expect(wrapper.text()).toContain(mensagem)
+    it('renderiza corretamente sem mensagem e com estilo padrão', () => {
+        const wrapper = mount(HelloWorld)
+    
+        expect(wrapper.text()).toContain('')
+        expect(wrapper.find('h1').classes()).toContain('text-2xl') // Verifica se a classe text-2xl está presente no elemento h1
+      })
+      
   })
-
-  it('renderiza corretamente sem mensagem', () => {
-    const wrapper = mount(HelloWorld)
-
-    expect(wrapper.text()).toContain('') // Como não passamos uma mensagem, esperamos que seja uma string vazia
-  })
-})
