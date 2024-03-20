@@ -1,7 +1,9 @@
 <template>
   <div>
-    <button @click="incrementCounter">Clique em mim!</button>
+    <button @click="incrementCounter" :disabled="counter >= maxClicks">Clique em mim!</button>
+    <button @click="resetCounter">Redefinir</button>
     <p>Número de cliques: {{ counter }}</p>
+    <p v-if="counter >= maxClicks" style="color: red;">Limite de cliques atingido!</p>
   </div>
 </template>
 
@@ -9,12 +11,18 @@
 export default {
   data() {
     return {
-      counter: 0
+      counter: 0,
+      maxClicks: 10
     };
   },
   methods: {
     incrementCounter() {
-      this.counter++;
+      if (this.counter < this.maxClicks) {
+        this.counter++;
+      }
+    },
+    resetCounter() {
+      this.counter = 0;
     }
   }
 };
