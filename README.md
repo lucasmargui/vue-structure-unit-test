@@ -119,9 +119,10 @@ import { mount } from '@vue/test-utils';
 import ApiComponent from '../ApiComponent.vue';
 ```
 
-## describe 
-
 ## it
+
+- renderiza uma lista de usuários
+- busca a lista de usuários na criação do componente
 
 # Implementação dos testes componente computed-evento
 
@@ -132,9 +133,13 @@ import { mount } from '@vue/test-utils';
 import ComputedComponent from '../ComputedComponent.vue';
 ```
 
-## describe 
-
 ## it
+
+- calcula o nome completo corretamente
+- reage a mudanças no firstName e lastName
+- valida o tamanho de firstName e lastName
+- calcula o comprimento do nome completo corretamente
+- trata o firstName e lastName nulos ou vazios
 
 # Implementação dos testes componente form
 
@@ -145,9 +150,14 @@ import { mount } from '@vue/test-utils';
 import FormComponent from '../FormComponent.vue';
 ```
 
-## describe 
-
 ## it
+
+- deve atualizar corretamente o modelo quando os campos são preenchidos
+- deve exibir mensagem de erro ao enviar formulário com campos em branco
+- deve exibir mensagem de erro para campo de nome em branco
+- deve exibir mensagem de erro para campo de e-mail em branco
+- deve exibir mensagem de erro para formato inválido de e-mail
+- deve limpar os campos após envio bem-sucedido do formulário
 
 # Implementação dos testes componente interacao-componente-pai-filho
 
@@ -159,9 +169,10 @@ import InteracaoComponente from '../InteracaoComponente.vue'
 import ChildComponente from '../ChildComponente.vue';
 ```
 
-## describe 
-
 ## it
+
+- renderiza o componente filho com as props corretas
+- passa propriedades para o ChildComponente e trata eventos dele
 
 # Implementação dos testes componente login
 
@@ -172,9 +183,13 @@ import { mount } from '@vue/test-utils';
 import LoginComponent from '../LoginComponent.vue';
 ```
 
-## describe 
-
 ## it
+
+- define os dados de email e senha quando o input é alterado
+- chama o método de login quando o formulário é enviado
+- exibe mensagem de erro se o email ou a senha estiverem faltando
+- displays error message for invalid credentials
+- faz login com sucesso com credenciais válidas
 
 # Implementação dos testes componente manipulacao-estado-vuex
 
@@ -186,9 +201,15 @@ import { createStore } from 'vuex'
 import EstadoComponente from '../EstadoComponente.vue';
 ```
 
-## describe 
-
 ## it
+
+- verifica se o contador está em 0
+- verifica se o botão de incremento está presente
+- verifica se o botão de decremento está presente
+- verifica se clicar no botão de incremento incrementa o contador
+- verifica se clicar no botão de decremento decrementa o contador
+- verifica se o componente exibe a mensagem de carregamento quando está carregando
+- verifica se o componente exibe uma mensagem de erro quando ocorre um erro
 
 # Implementação dos testes componente manipulacao-evento
 
@@ -199,9 +220,12 @@ import { mount , shallowMount } from '@vue/test-utils'
 import ButtonCounter from '../ManipulacaoEvento.vue'
 ```
 
-## describe 
-
 ## it
+
+- incrementa o contador ao clicar no botão
+- reseta o contador ao clicar no botão "Redefinir
+- altera o texto quando o botão é clicado
+
 
 # Implementação dos testes componente mounted-evento
 
@@ -212,9 +236,9 @@ import { mount } from '@vue/test-utils';
 import CalculateComponent from '../CalculateComponent.vue';
 ```
 
-## describe 
-
 ## it
+
+- calcula e exibe a soma corretamente quando montado
 
 # Implementação dos testes componente renderiza-componente
 
@@ -223,11 +247,12 @@ import CalculateComponent from '../CalculateComponent.vue';
 ```
 import { mount } from '@vue/test-utils'
 import HelloWorld from '../RenderizaComponente.vue'
-```
-
-## describe 
+``` 
 
 ## it
+
+- renderiza corretamente com a mensagem passada e descrição
+- renderiza corretamente sem mensagem e com estilo padrão
 
 # Implementação dos testes componente renderiza-condicional
 
@@ -239,9 +264,11 @@ import CondicionalComponente from '../CondicionalComponente.vue';
 
 ```
 
-## describe 
-
 ## it
+
+- renderiza a mensagem quando mostrarMensagem é verdadeiro
+
+- não renderiza a mensagem quando mostrarMensagem é falso
 
 # Implementação dos testes componente rotas
 
@@ -253,7 +280,7 @@ import HomeComponente from '../HomeComponente.vue'
 import routes from '@/router/'
 ```
 
-## describe 
-
 ## it
+
+- renderiza o componente Home ao navegar para /
 
