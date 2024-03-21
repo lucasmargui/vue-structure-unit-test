@@ -124,6 +124,42 @@ import ApiComponent from '../ApiComponent.vue';
 - renderiza uma lista de usuários
 - busca a lista de usuários na criação do componente
 
+### Mockando a chamada da API Externa
+
+
+Essa função de mock substitui a função 'get' do Axios, isso garante que ao tentar fazer uma solicitação GET, ela retornará os dados abaixo.
+
+```
+jest.mock('axios', () => ({
+    get: jest.fn(() => Promise.resolve({ data: [{ id: 1, name: 'User 1' }, { id: 2, name: 'User 2' }] }))
+  }));
+```
+
+### beforeEach 
+
+No início de cada chamada de teste é realizado a montagem de componente em memória 
+
+```
+wrapper = mount(ApiComponent);
+```
+
+### afterEach 
+
+Ao final de cada teste é realizado uma limpeza de todos os mocks de jest
+
+```
+jest.clearAllMocks();
+```
+
+### test: renderiza uma lista de usuários
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/a2998d41-2aae-4502-94bf-823daf413f50)
+
+### test: busca a lista de usuários na criação do componente
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/23bcfb7a-ead6-44b9-81cc-c75a69e80f40)
+
+
 # Implementação dos testes componente computed-evento
 
 ## Importações
@@ -140,6 +176,32 @@ import ComputedComponent from '../ComputedComponent.vue';
 - valida o tamanho de firstName e lastName
 - calcula o comprimento do nome completo corretamente
 - trata o firstName e lastName nulos ou vazios
+
+
+### test: calcula o nome completo corretamente
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/ec9ebdc3-fd89-41e5-8300-35f05e9bcd55)
+
+
+### test: reage a mudanças no firstName e lastName
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/8ab287fe-ddc4-4fcd-ac65-d8819bb87ac7)
+
+
+### test: valida o tamanho de firstName e lastName
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/ddb0c6b0-f2bc-49de-ae43-8a6fdeeceebc)
+
+
+### test: calcula o comprimento do nome completo corretamente
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/62349b9a-c9d0-4ada-87fc-a9605f1eb337)
+
+
+### test: trata o firstName e lastName nulos ou vazios
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/5a93ccd9-68ea-4993-92ed-0aa6dd56ed6a)
+
 
 # Implementação dos testes componente form
 
