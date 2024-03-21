@@ -280,23 +280,23 @@ import LoginComponent from '../LoginComponent.vue';
 - displays error message for invalid credentials
 - faz login com sucesso com credenciais válidas
 
-### define os dados de email e senha quando o input é alterado
+### test: define os dados de email e senha quando o input é alterado
 
 ![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/3b057729-7f94-4110-b858-4838e80fe4f0)
 
-### chama o método de login quando o formulário é enviado
+### test: chama o método de login quando o formulário é enviado
 
 ![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/f644983a-d589-4027-93bc-5e0c13466923)
 
-### exibe mensagem de erro se o email ou a senha estiverem faltando
+### test: exibe mensagem de erro se o email ou a senha estiverem faltando
 
 ![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/edd93bc6-1989-49b2-9bf4-b0d094da903f)
 
-### displays error message for invalid credentials
+### test: displays error message for invalid credentials
 
 ![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/f0b5852e-84e0-4c4e-aa15-d929369769f8)
 
-### faz login com sucesso com credenciais válidas
+### test: faz login com sucesso com credenciais válidas
 
 ![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/4a3f4dca-223a-4ed5-a5f0-2d78e6edf4a8)
 
@@ -372,7 +372,6 @@ E por ultimo é criado um wrapper passando o fake store como plugin
 
 ![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/1abbf73a-abb5-4d66-b523-1a4c33f5986f)
 
-
 ### test: verifica se o componente exibe a mensagem de carregamento quando está carregando
 
 ![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/f5c3d589-3004-43d8-80d3-47c03edb6218)
@@ -397,6 +396,19 @@ import ButtonCounter from '../ManipulacaoEvento.vue'
 - altera o texto quando o botão é clicado
 
 
+### test: incrementa o contador ao clicar no botão
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/7e40433c-d584-4af1-908d-da1f1b489b20)
+
+### test: reseta o contador ao clicar no botão "Redefinir
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/ddf8dcc9-96c2-405f-b372-e51d0edd09c3)
+
+
+### test: altera o texto quando o botão é clicado
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/42a3b4bd-aa58-494d-8d33-c796b610c9fd)
+
 # Implementação dos testes componente mounted-evento
 
 ## Importações
@@ -409,6 +421,10 @@ import CalculateComponent from '../CalculateComponent.vue';
 ## it
 
 - calcula e exibe a soma corretamente quando montado
+
+### test: calcula e exibe a soma corretamente quando montado
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/a6cfb4c1-63e2-4414-a8c2-fd74c4d95721)
 
 # Implementação dos testes componente renderiza-componente
 
@@ -424,6 +440,15 @@ import HelloWorld from '../RenderizaComponente.vue'
 - renderiza corretamente com a mensagem passada e descrição
 - renderiza corretamente sem mensagem e com estilo padrão
 
+### test: renderiza corretamente com a mensagem passada e descrição
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/86fe3ba7-8962-44d9-afff-20f72edb6c60)
+
+### test: renderiza corretamente sem mensagem e com estilo padrão
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/b84f0599-6abd-4f6e-a6c4-6049c84ac5d2)
+
+
 # Implementação dos testes componente renderiza-condicional
 
 ## Importações
@@ -437,8 +462,22 @@ import CondicionalComponente from '../CondicionalComponente.vue';
 ## it
 
 - renderiza a mensagem quando mostrarMensagem é verdadeiro
-
 - não renderiza a mensagem quando mostrarMensagem é falso
+
+
+Const wrapper foi montado fora do escopo de cada teste para que cada teste utilize o mesmo componente na memória virtual, simulando um toggle
+
+```
+const wrapper = mount(CondicionalComponente);
+```
+
+### test: renderiza a mensagem quando mostrarMensagem é verdadeiro
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/169c1b57-cecc-4aeb-bad5-cbdfcb4446b2)
+
+### test: não renderiza a mensagem quando mostrarMensagem é falso
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/d564bd0d-2dfe-4bf3-adba-a169637048b7)
 
 # Implementação dos testes componente rotas
 
