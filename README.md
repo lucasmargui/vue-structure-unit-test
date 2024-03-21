@@ -159,7 +159,6 @@ jest.clearAllMocks();
 
 ![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/23bcfb7a-ead6-44b9-81cc-c75a69e80f40)
 
-
 # Implementação dos testes componente computed-evento
 
 ## Importações
@@ -182,26 +181,21 @@ import ComputedComponent from '../ComputedComponent.vue';
 
 ![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/ec9ebdc3-fd89-41e5-8300-35f05e9bcd55)
 
-
 ### test: reage a mudanças no firstName e lastName
 
 ![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/8ab287fe-ddc4-4fcd-ac65-d8819bb87ac7)
-
 
 ### test: valida o tamanho de firstName e lastName
 
 ![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/ddb0c6b0-f2bc-49de-ae43-8a6fdeeceebc)
 
-
 ### test: calcula o comprimento do nome completo corretamente
 
 ![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/62349b9a-c9d0-4ada-87fc-a9605f1eb337)
 
-
 ### test: trata o firstName e lastName nulos ou vazios
 
 ![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/5a93ccd9-68ea-4993-92ed-0aa6dd56ed6a)
-
 
 # Implementação dos testes componente form
 
@@ -221,6 +215,31 @@ import FormComponent from '../FormComponent.vue';
 - deve exibir mensagem de erro para formato inválido de e-mail
 - deve limpar os campos após envio bem-sucedido do formulário
 
+### test: deve atualizar corretamente o modelo quando os campos são preenchidos
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/ed996d7f-5efb-44bf-912e-004dd43e3c92)
+
+
+### test: deve exibir mensagem de erro ao enviar formulário com campos em branco
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/6beda36c-4a30-4211-a9f9-4561ef463e36)
+
+### test: deve exibir mensagem de erro para campo de nome em branco
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/1ac52b12-a44e-44cb-bc4c-2dd8c22c8042)
+
+### test: deve exibir mensagem de erro para campo de e-mail em branco
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/51c77b4c-e1a7-4fff-a17f-545a1f4b7df8)
+
+### test: deve exibir mensagem de erro para formato inválido de e-mail
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/6cdcd798-d640-4ab3-90fb-bd13931ba4c8)
+
+### test: deve limpar os campos após envio bem-sucedido do formulário
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/6d888083-c658-4459-ab09-a2dc1bbc44d7)
+
 # Implementação dos testes componente interacao-componente-pai-filho
 
 ## Importações
@@ -235,6 +254,14 @@ import ChildComponente from '../ChildComponente.vue';
 
 - renderiza o componente filho com as props corretas
 - passa propriedades para o ChildComponente e trata eventos dele
+
+### test: renderiza o componente filho com as props corretas
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/5140c3e6-134a-4e68-8af1-5223c6f51a44)
+
+### test: passa propriedades para o ChildComponente e trata eventos dele
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/32c76277-c9fa-4da6-9c07-8c13aee4bd6d)
 
 # Implementação dos testes componente login
 
@@ -252,6 +279,27 @@ import LoginComponent from '../LoginComponent.vue';
 - exibe mensagem de erro se o email ou a senha estiverem faltando
 - displays error message for invalid credentials
 - faz login com sucesso com credenciais válidas
+
+### define os dados de email e senha quando o input é alterado
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/3b057729-7f94-4110-b858-4838e80fe4f0)
+
+### chama o método de login quando o formulário é enviado
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/f644983a-d589-4027-93bc-5e0c13466923)
+
+### exibe mensagem de erro se o email ou a senha estiverem faltando
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/edd93bc6-1989-49b2-9bf4-b0d094da903f)
+
+### displays error message for invalid credentials
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/f0b5852e-84e0-4c4e-aa15-d929369769f8)
+
+### faz login com sucesso com credenciais válidas
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/4a3f4dca-223a-4ed5-a5f0-2d78e6edf4a8)
+
 
 # Implementação dos testes componente manipulacao-estado-vuex
 
