@@ -321,6 +321,66 @@ import EstadoComponente from '../EstadoComponente.vue';
 - verifica se o componente exibe a mensagem de carregamento quando está carregando
 - verifica se o componente exibe uma mensagem de erro quando ocorre um erro
 
+### beforeEach(()
+
+Antes de cada teste unitário é criado uma fake store
+
+```
+ fakestore = createStore({
+```
+E as actions incrementAsync e decrementAsync são substituidas pela criação de 2 funções mocks com uma implementação semelhante com a original
+
+```
+incrementAsync: jest.fn().mockImplementation(({ commit }) => { ...
+
+```
+
+```
+decrementAsync: jest.fn().mockImplementation(({ commit }) => { ...
+
+```
+
+E por ultimo é criado um wrapper passando o fake store como plugin
+
+```
+ wrapper = mount(EstadoComponente, {
+    global: {
+      plugins: [fakestore],
+    },
+  });
+
+```
+
+
+### test: verifica se o contador está em 0
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/1cc1ef5c-1c95-4758-b094-152a07b7bbf3)
+
+### test: verifica se o botão de incremento está presente
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/bfe4d070-f1e8-4af9-869b-bb63fb019242)
+
+### test: verifica se o botão de decremento está presente
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/50468f46-96fd-4bf5-a12b-3db46b825ee2)
+
+### test: verifica se clicar no botão de incremento incrementa o contador
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/23b11f1e-5846-4127-b0cd-dfe554453f8a)
+
+### test: verifica se clicar no botão de decremento decrementa o contador
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/1abbf73a-abb5-4d66-b523-1a4c33f5986f)
+
+
+### test: verifica se o componente exibe a mensagem de carregamento quando está carregando
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/f5c3d589-3004-43d8-80d3-47c03edb6218)
+
+### test: verifica se o componente exibe uma mensagem de erro quando ocorre um erro
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/4549aace-56a3-44a2-805b-0c937be6b800)
+
 # Implementação dos testes componente manipulacao-evento
 
 ## Importações
