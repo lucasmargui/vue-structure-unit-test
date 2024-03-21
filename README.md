@@ -47,11 +47,66 @@ Para realização dos testes do componente iremos criar um diretório __tests__.
 </div>
 
 
+
+# Implementação dos testes service projectServices
+
+## Importações
+
+```
+import { getProject, createProject, updateProject, deleteProject } from '../projectServices';
+```
+
+## it
+
+- deve retornar o projeto com o id fornecido
+- deve falhar ao tentar obter um projeto com um id inválido
+- deve criar um novo projeto
+- deve atualizar o projeto com o id fornecido
+- deve falhar ao tentar atualizar um projeto com um id inválido
+- deve deletar o projeto com o id fornecido
+- deve falhar ao tentar deletar um projeto com um id inválido
+
+### Transformando as funções importadas em funções mock
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/06850427-1b1f-41b2-94af-81dcd1bfa86a)
+
+### test: deve retornar o projeto com o id fornecido
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/b1656d3f-6c10-42a9-9529-6ecc97b48a84)
+
+### test: deve falhar ao tentar obter um projeto com um id inválido
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/ac4865ff-27ea-4501-aefd-14faf797ba1d)
+
+### test: deve criar um novo projeto
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/7e695a18-6b84-4383-9fac-5529a6435645)
+
+### test: deve falhar ao tentar criar um projeto com um nome duplicado
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/b9132386-afa7-4959-a8d1-b3fbb9b3a067)
+
+### test: deve atualizar o projeto com o id fornecido
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/b9b6bb58-232c-42ad-a904-cfe9bf4b0eb5)
+
+
+### test: deve falhar ao tentar atualizar um projeto com um id inválido
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/06d6ebe1-15e4-4269-b9bb-13ca737aac9e)
+
+
+### test: deve deletar o projeto com o id fornecido
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/7241b29d-a97b-4cd2-9a5b-179babb4d5ed)
+
+
+### test: deve falhar ao tentar deletar um projeto com um id inválido
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/485c2eed-56dc-4616-b8ea-68395dcce13f)
+
+
 # Implementação dos testes componente SearchInput
-
-<details>
-  <summary>Clique para mostrar conteúdo</summary>
-
 
 
 ## Importações
@@ -60,54 +115,33 @@ import { mount } from '@vue/test-utils'; // Importando a função mount da bibli
 import SearchInput from '../SearchInput.vue'; // Importando o componente SearchInput a ser testado
 ```
 
-- Importando a função mount da biblioteca @vue/test-utils. Esta função é utilizada para montar componentes Vue em um ambiente de teste, permitindo a interação e inspeção desses componentes durante os testes unitários ou de integração.
-
-- Importando o componente SearchInput.vue para teste
-
-
-## describe 
-```
-describe('search-input - Unit', () => { 
-```
-
-Descrevendo o conjunto de testes para o componente SearchInput
-
 ## it
 
-- it('deve ser uma instância Vue', () => { 
-- it('deve atualizar searchQuery quando o valor da prop é alterado', async () => {
-- it('deve emitir o evento de input quando algo é digitado', async () => {
-- it('deve limpar o valor do input quando o ícone X é clicado', async () => { 
+- deve ser uma instância Vue
+- deve atualizar searchQuery quando o valor da prop é alterado
+- deve emitir o evento de input quando algo é digitado
+- deve limpar o valor do input quando o ícone X é clicado
 
 
 Casos de teste para verificar.
 
 
-###  it('deve ser uma instância Vue'
+### test: deve ser uma instância Vue
 
-<div align="center">
-  <img src="https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/e9841098-3910-4811-a594-65b21ee8c7ca" style="width:100%">
-</div>
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/4bb965d6-2c05-4b3e-ad97-77b2fda61eb9)
 
-###  it('deve atualizar searchQuery quando o valor da prop é alterado'
 
-<div align="center">
-  <img src="https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/58f7fb97-ce5a-40a5-8724-7fb0fc1adb76" style="width:100%">
-</div>
+### test: deve atualizar searchQuery quando o valor da prop é alterado
 
-###  it('deve emitir o evento de input quando algo é digitado',
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/e7cd8cd8-a04d-4b83-9ddf-846eeba030a2)
 
-<div align="center">
-  <img src="https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/20054262-00cb-452d-89a8-714a85204e35" style="width:100%">
-</div>
+### test: deve emitir o evento de input quando algo é digitado
 
-###  it('deve limpar o valor do input quando o ícone X é clicado'
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/7c18ba12-3d4f-4eee-a82d-7d19a425355b)
 
-<div align="center">
-  <img src="https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/5991ee8f-1696-4c29-aa65-c654a8c4ed9d" style="width:100%">
-</div>
+### test: deve limpar o valor do input quando o ícone X é clicado
 
-</details> 
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/70cc4260-6783-4acb-b78d-41d2ade4d227)
 
 
 # Implementação dos testes api-client
@@ -491,5 +525,28 @@ import routes from '@/router/'
 
 ## it
 
-- renderiza o componente Home ao navegar para /
+- renderiza o componente Home ao navegar para "/"
+
+
+### beforeEach(()
+
+Criação de um wrapper passando o arquivo importado routes como plugin para que o componente seja montado em memória antes de cada teste.
+
+```
+ wrapper = mount(EstadoComponente, {
+    global: {
+      plugins: [fakestore],
+    },
+  });
+
+```
+ 
+ 
+### test:  renderiza o componente Home ao navegar para "/"
+
+![image](https://github.com/lucasmargui/Vue_Test_Jest-Unit/assets/157809964/720e2ae8-d14f-419b-8ded-7d5a24c21ad1)
+
+
+
+
 
