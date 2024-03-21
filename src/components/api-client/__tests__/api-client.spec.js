@@ -37,18 +37,11 @@ jest.mock('axios', () => ({
   
     it('renders a list of users', async () => {
 
-     
-
       await wrapper.vm.$nextTick();
       expect(wrapper.findAll('.user-item')).toHaveLength(2);
     });
   
     it('fetches user list on component creation', async () => {
-
-      jest.mock('axios', () => ({
-        get: jest.fn(() => Promise.reject(new Error('Request failed'))),
-      }));
-
       await wrapper.vm.$nextTick();
       expect(axios.get).toHaveBeenCalledWith('https://jsonplaceholder.typicode.com/users');
       expect(wrapper.vm.userList).toEqual([{ id: 1, name: 'User 1' }, { id: 2, name: 'User 2' }]);

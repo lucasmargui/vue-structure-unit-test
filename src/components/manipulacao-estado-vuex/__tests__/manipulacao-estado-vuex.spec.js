@@ -1,14 +1,12 @@
 import { mount } from '@vue/test-utils';
-import { createApp } from 'vue';
 import { createStore } from 'vuex'
-import Vuex from 'vuex';
 import EstadoComponente from '../EstadoComponente.vue';
 
 
 
 
 
-let store   
+let fakestore   
 
 // Montar o componente com a loja Vuex  
 let wrapper
@@ -16,7 +14,7 @@ let wrapper
 beforeEach(() => {
 
   // Criar uma loja Vuex
- store = createStore({
+  fakestore = createStore({
   state: {
     counter: 0,
     loading: false,
@@ -55,7 +53,7 @@ beforeEach(() => {
 
   wrapper = mount(EstadoComponente, {
     global: {
-      plugins: [store],
+      plugins: [fakestore],
     },
   });
 
@@ -119,7 +117,7 @@ describe('EstadoComponente.vue', () => {
 
   it('Verifica se o componente exibe a mensagem de carregamento quando está carregando', async () => {
     // Definir o estado de loading como verdadeiro
-    await store.commit('setLoading', true);
+    await fakestore.commit('setLoading', true);
 
     // Aguardar um curto período de tempo para garantir que o componente foi renderizado completamente
     await wrapper.vm.$nextTick();
@@ -135,7 +133,7 @@ describe('EstadoComponente.vue', () => {
     const errorMessage = 'Erro ao carregar dados';
 
     // Definir o estado de erro
-    await store.commit('setError', errorMessage);
+    await fakestore.commit('setError', errorMessage);
 
     // Aguardar um curto período de tempo para garantir que o componente foi renderizado completamente
     await wrapper.vm.$nextTick();

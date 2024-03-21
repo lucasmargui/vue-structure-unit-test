@@ -2,7 +2,13 @@
 import { mount } from '@vue/test-utils';
 import ComputedComponent from '../ComputedComponent.vue';
 
+
+
+
 describe('ComputedComponent', () => {
+
+
+  
   it('calculates full name correctly', () => {
     const wrapper = mount(ComputedComponent, {
       propsData: {
